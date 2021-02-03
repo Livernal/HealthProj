@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    stages {
+        stage('Gradle') {
+            steps {
+                sh 'gradle --version'
+            }
+        }
+        stage('Sonarqube') {
+            steps {
+                sh 'gradle sonarqube'
+            }
+        }
+    }
+}
